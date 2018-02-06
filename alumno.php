@@ -1,4 +1,6 @@
-<?php /*
+<?php
+declare(strict_types=1);
+ /*
 $unBool = TRUE;
 $unString = "FOO";
 $unStringDos = 'foo';
@@ -124,6 +126,37 @@ $myNumbers = array(1,2,3,4,5,6,7,8,9);
 $sumAll = sumarAll($myNumbers);
 echo $br;
 echo $sumAll;
+
+// Función con argumentos predeterminado 
+
+function multiPlicarTodo($a = 5, $b=5){
+    $suma = $a * $b;
+    return $suma;
+}
+$sumAll = multiPlicarTodo();
+$sumAll = multiPlicarTodo(3,3);
+echo $br;
+echo $sumAll;
+
+//Tipar funcion 
+
+function sumAllType ($a, $b): float {
+    $todo = $a + $b;
+    return $todo;
+}
+
+var_dump(sumAllType(1,2.7));
+function sum($a, $b): int {
+    return $a + $b;
+}
+
+var_dump(sum(1, 2));
+var_dump(sum(1, 2.5));
+
+
+
+
+
 
 
 
