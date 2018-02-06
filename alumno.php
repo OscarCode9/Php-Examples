@@ -40,6 +40,9 @@ if ($numDos == 5){
 echo 'Este valor es igual a 5';
 }*/
 
+//Ciclos
+
+//Ciclo while
 $r = 0;
 $br = '<br>';
 while ($r <= 100) {
@@ -50,12 +53,14 @@ while ($r <= 100) {
     $r++;
 }
 
+//Otra forma de escribir el ciclo while
 $ite = 1;
 while ($ite <= 10):
     echo $ite;
     $ite++;
 endwhile;
 
+//Ciclo do-while
 $myEdad =8;
 $myDinero = 1;
 do {
@@ -66,12 +71,14 @@ do {
     $myDinero++;
 }while($myDinero < 100);
 
+//For y arreglos
 $myArray = array('Azul', 'Verde', 'Blanco', 'Amarillo');
 for ($i=0; $i < count($myArray); $i++) {
     echo $myArray[$i];
     echo $br;
 }
 
+//Romper el ciclo con break
 for ($i=0; $i <100 ; $i++) { 
     if($i === 5){
 			echo 'Lo encontramos';
@@ -79,6 +86,7 @@ for ($i=0; $i <100 ; $i++) {
     }
 }
 
+//Iterar un erreglo con ciclo for
 $people = array(
 	array('name' => 'Oscar', 'salt' => 9000),
 	array('name' => 'Luis', 'salt' => 4000)
@@ -89,5 +97,42 @@ for ($i=0; $i < count($people); $i++) {
 for ($i=0; $i < count($people); $i++) { 
 	echo $people[$i]['salt'];
 }
+// Funcion recursiva 
+
+function myRecursividad($a){
+    if($a<20){
+        myRecursividad($a+1);
+    }
+}
+myRecursividad(1);
+
+//Función con argumento tipo Array
+function sumarAll ($myArray){
+    $sumaArray =0;
+    $isArray = is_array($myArray) ? true : false;
+    if($isArray){
+        for ($i=0; $i <count($myArray) ; $i++) { 
+            $sumaArray += $myArray[$i];
+        }
+        return $sumaArray;
+    }else{
+        return 0;
+    }
+}
+
+$myNumbers = array(1,2,3,4,5,6,7,8,9);
+$sumAll = sumarAll($myNumbers);
+echo $br;
+echo $sumAll;
+
+
+
+
+
+//array a funcione
+
+
+
+
 
 
