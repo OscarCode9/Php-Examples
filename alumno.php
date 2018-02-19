@@ -151,21 +151,87 @@ function sum($a, $b): int {
 }
 
 var_dump(sum(1, 2));
-var_dump(sum(1, 2.5));
+var_dump(sum(1, 5));
 
+class Persona {
+    public $Name = 'Oscar';
 
+    public function getName(){
+        return $this -> Name;
+    }
+    public function setName($Name = null){
+        $this -> Name = $Name;
+    }
+    static public function getAll (){
+        return 'Medo estatico, no se hace una instancia';
+    }
+}
 
+echo Persona::getAll();
+$name = new Persona();
+$name->setName('Raul');
 
+echo $name->getName();
 
+class MyClassTwo {
+  public $var = 'myCiberAcademy';
+  function __construct(){
+    $var = 'dad';
+  }
+  function DisplayVar($param1, $param2){
+    $var = $param2;
+    echo $var;
+  }
+}
+class MyClass {
+    const constante = 'VALOR CONSTANTE';
+    public $var1 = 'Hola'.'mundo';
+    public $var3 = 1 + 2;
+    public $privateVar =  5+10;
+    public $boole = FALSE;
+    function __construct(){
+      echo 'Que onda'.$this->var3;
+      $this->boole  = TRUE;
+    }
 
+    public function showConst()
+    {
+        echo "\n";
+        echo self::constante."\n";
+        echo $this -> var3;
+        echo $this -> privateVar;
+        if($this->boole){
+          echo 'Que onda'.$this->var1;
+        }
+        $x = 10;
+        $y = 9; 
 
+        $x == $y ? $c = "Es igual " : $c = 'No es igual';
+        echo 'Mostrar variable c: '.$c;
+    }
+}
 
+$newClasswe = new MyClass();
+$newClasswe->showConst();
+$bar = new MyClass();
+#sentencia switch
+$ramValor = rand(1, 3);
 
-
-//array a funcione
-
-
-
+switch ($ramValor) {
+    case 1:
+        $ramValor = $ramValor * 10;
+        break;
+    case 2:
+        $ramValor = $ramValor * 20;
+        break;
+    case 3:
+        $ramValor = $ramValor * 40;
+        break;
+    default:
+        $ramValor = rand(40, 60);
+        break;
+}
+echo 'Mi ramValor en un switch: '.$ramValor;
 
 
 
